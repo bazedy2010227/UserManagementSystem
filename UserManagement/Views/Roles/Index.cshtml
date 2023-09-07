@@ -1,0 +1,30 @@
+﻿@model IEnumerable<IdentityRole>
+@{
+    ViewBag.Title = "Roles";
+}
+
+<h2>Roles</h2>
+<partial name="_RoleForm" model="new RolesFormViewModel()" />
+<table class="table table-striped mt-4">
+    <thead>
+        <tr class="bg-primary text-white">
+            <th>Role Name</th>
+            <th>Id</th>
+        </tr>
+    </thead>
+<tbody>
+    @if (Model != null){
+        @foreach (var role in Model)
+        {
+            <tr>
+                <td>
+                    @role.Name
+                </td>
+                <td>
+                    @role.Id
+                </td>
+            </tr>
+        }
+    }
+</tbody>
+</table>
